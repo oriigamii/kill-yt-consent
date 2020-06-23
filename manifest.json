@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "Kill YT Consent",
+  "description": "Prevent Youtube to display consent bump",
+  "version": "1.0",
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "contextMenus",
+    "notifications",
+    "http://www.youtube.com/",
+    "https://www.youtube.com/",
+    "webNavigation"
+  ]
+}
