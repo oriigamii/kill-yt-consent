@@ -12,8 +12,8 @@
   "content_scripts": [
     {
       "matches": [
-        "http://www.youtube.com/",
-        "https://www.youtube.com/"
+        "*://*.youtube.com/*",
+        "*://*.google.com/*"
       ],
       "js": [
         "background.js"
@@ -26,8 +26,8 @@
     "activeTab",
     "contextMenus",
     "notifications",
-    "http://www.youtube.com/",
-    "https://www.youtube.com/",
+    "*://*.youtube.com/*",
+    "*://*.google.com/*",
     "webNavigation",
     "storage"
   ],

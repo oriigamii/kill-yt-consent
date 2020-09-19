@@ -1,6 +1,9 @@
 function killBump() {
+  let popups = document.getElementsByTagName('ytd-popup-container');
   let bump = document.querySelector('[id*="consent-bump"]');
-  if (bump) {
+  if (popups.length > 0) {
+    popups[0].remove();
+  } else if (bump) {
     document.getElementById(bump.id).remove();
   }
 }
@@ -20,7 +23,7 @@ function toggleAutoPlay(autoplay) {
   }
 }
 
-if (window.location.host == "www.youtube.com") {
+function blockNRun() {
   killBump();
   let video = document.getElementsByTagName("video")[0];
   if (video) {
@@ -30,3 +33,13 @@ if (window.location.host == "www.youtube.com") {
     });
   }
 }
+
+function main() {
+  if (
+    window.location.host.includes("google")
+    || window.location.host.includes("youtube")) {
+    blockNRun();
+  }
+}
+
+main();
