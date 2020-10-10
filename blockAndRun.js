@@ -11,9 +11,14 @@ function killBump() {
 function cleanPlay(video) {
   setTimeout(function () {
     if (video.paused) {
-      video.play();
+      document.getElementsByClassName("ytp-large-play-button ytp-button")[0].click()
+      // setTimeout(function () {
+      //   if (video.paused) {
+      //     video.play();
+      //   }
+      // }, 990)
     }
-  }, 980)
+  }, 990)
 }
 
 function toggleAutoPlay(autoplay) {
@@ -31,6 +36,7 @@ function blockNRun() {
     chrome.storage.local.get(['enableAutoplay'], function (result) {
       toggleAutoPlay(result.enableAutoplay);
     });
+
   }
 }
 
